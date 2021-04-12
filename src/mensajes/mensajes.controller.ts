@@ -37,7 +37,7 @@ export class MensajesController {
         response.status(HttpStatus.FORBIDDEN).json({mensaje:'error en la actualizacion del mensaje'});
        });
     }
-    @Delete('id')
+    @Delete(':id')
     delete(@Res() response, @Param('id') idMensaje){
         this.mensajesServices.deleteMensaje(idMensaje).then(res =>{
             response.status(HttpStatus.OK).json(res);
